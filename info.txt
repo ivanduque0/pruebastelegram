@@ -1,0 +1,27 @@
+se debe agregar en el ciclo while de la funcion __threaded_polling
+lo que se quiere hacer para saber que el bot esta activo. lo
+que pienso hacer es meter ahi una funcion que cambie el estado
+de un valor en la base de datos, y en el codigo encargado de manejar
+la base de datos local voy a hacer que lo cambie pero como la funcion 
+en el codigo del bot se repite a cada rato, este va  a estar cambiandolo
+al valor que se supone debe tener para indicar que esta activo el bot.
+
+Sin embargo no se si hacer esto ya que la razon mas obvia es que 
+se desconecte de internet y eso impediria tambien que se cambie el
+valor en la base de datos principal
+
+
+
+
+
+
+
+
+si quiero que el pooling pare solo coloco
+ un break en el ciclo while, esto es muhco mejor que la opcion de arriba
+ ya que no tengo que tocar mucho la libreria por dentro
+
+
+para hacer ping es preferible bajar esta libreria
+pip install ping3
+y hacerle ping a la camara en caso que se quiera saber si e sta conectada

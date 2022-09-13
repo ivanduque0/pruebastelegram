@@ -1,4 +1,7 @@
 import telebot
+from apscheduler.schedulers.blocking import BlockingScheduler
+
+sched = BlockingScheduler()
 
 token='5592857252:AAF_-Hpfwgn9yXazGnj6SmvucLZ9aJT-ooY'
 bot = telebot.TeleBot(token, parse_mode=None)
@@ -30,7 +33,7 @@ def manejador_seleccion(message):
     messageid=message.id
     message.text
     #print('message')
-    bot.send_message(chat_id=chatid,text=message)
+    #bot.send_message(chat_id=chatid,text=message)
     print(f'ID del usuario: {message.from_user.id}')
     print(f'ID del chat: {chatid}')
     print(f'mensaje recibido: {message.text}')
@@ -46,9 +49,29 @@ def manejador_seleccion(message):
 
 
 #bot.polling(skip_pending=True, timeout=TIMEOUT)
-bot.infinity_polling(skip_pending=True, timeout=TIMEOUT)
-bot.stop_polling()
 
+def my_interval_job():
+    bot.send_message(chat_id=-1001544949758, text="Hello. its 6am!")
+    #bot.stop_polling()
+    bot.polling(skip_pending=True, timeout=TIMEOUT)
+    
+    
+
+# sched.add_job(my_interval_job, 'interval',minutes=0.1,replace_existing=True)
+# sched.start()
+
+
+#bot.infinity_polling(skip_pending=True, timeout=TIMEOUT)
+#bot.polling(skip_pending=True, timeout=TIMEOUT, non_stop=True)
+#bot.stop_polling()
+# a=0
+# while True:
+#     a=a+1
+#     bot.polling(skip_pending=True, timeout=TIMEOUT)
+#     print(a)
+while True:
+    bot.polling(skip_pending=True, timeout=TIMEOUT)
+    bot.stop_polling()
 
 xd = {'content_type': 'text', 'id': 4, 'message_id': 4, 
 'from_user': {'id': 1262315361, 'is_bot': False, 'first_name': 'Mortadelo', 'username': None, 
