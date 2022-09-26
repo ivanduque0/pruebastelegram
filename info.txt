@@ -1,4 +1,5 @@
-se debe agregar en el ciclo while de la funcion __threaded_polling
+se debe agregar en el ciclo while de la funcion __threaded_polling 
+de la clase telebot ubicado en home/usuario/.local/lib/python/site-packages/telebot/init.py
 lo que se quiere hacer para saber que el bot esta activo. lo
 que pienso hacer es meter ahi una funcion que cambie el estado
 de un valor en la base de datos, y en el codigo encargado de manejar

@@ -71,7 +71,8 @@ def my_interval_job():
 #     print(a)
 while True:
     bot.polling(skip_pending=True, timeout=TIMEOUT)
-    bot.stop_polling()
+    #bot.stop_polling()
+    bot.send_message(chat_id=-1001544949758, text="Prueba1")
 
 xd = {'content_type': 'text', 'id': 4, 'message_id': 4, 
 'from_user': {'id': 1262315361, 'is_bot': False, 'first_name': 'Mortadelo', 'username': None, 
